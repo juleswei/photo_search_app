@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var source = $("#photo-list-template").html();
+  var photoListTemplate = Handlebars.compile(source)
 
   $('form').submit(function(e) {
     e.preventDefault();
@@ -11,12 +13,12 @@ $(document).ready(function() {
   function callback(data) {
       var displayPhoto = photoListTemplate({photos:data.items})
 
-      var displayPhoto = '<ul>';
-      $.each(data.items,function(index,items) {
-        displayPhoto += '<li>';
-        displayPhoto += '<img src="'+ items.media.m + '"></li>';     
-      });
-      displayPhoto += '</ul>';
+      // var displayPhoto = '<ul>';
+      // $.each(data.items,function(index,items) {
+      //   displayPhoto += '<li>';
+      //   displayPhoto += '<img src="'+ items.media.m + '"></li>';     
+      // });
+      // displayPhoto += '</ul>';
       $('#photo_collage').html(displayPhoto);
     };
 

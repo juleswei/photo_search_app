@@ -1,24 +1,30 @@
 <div class ="jumbotron">
-<h1>Flickr</h1>
+  <h1>Flickr</h1>
 </div>
 
 <div class ="jumbotron">
-<h1>Flickr</h1>
+  <h1>Flickr</h1>
 </div>
 
 <div>
-<form>
-  <label for="search">Type your search here</label>
-  <input type="search" name="search" id="search_type">
-  <button type="submit" class="btn">Search</button>
-</form>
+  <form>
+    <label for="search">Type your search here</label>
+    <input type="search" name="search" id="search_type">
+    <button type="submit" class="btn">Search</button>
+  </form>
 </div>
 
 <div>
-<table>
-<ul id="photo_collage">
+  <table>
+    <ul id="photo_collage">
+    </ul>
+  </table>
 
-</ul>
-</table>
-
+  <script id="photo-list-template" type="text/x-handlebars-template">
+    <ul>
+      {{#each photos}}
+      <li><a href="{{link}}" ><img src= "{{media.m}}"></a></li>
+      {{/each}}
+    </ul>
+  </script>
 </div>
